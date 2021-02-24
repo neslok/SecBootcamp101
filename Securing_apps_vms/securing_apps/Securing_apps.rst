@@ -276,13 +276,13 @@ Testing the Application
 
 2.	Launch the console for your **WinTools** VM.
 
-3.	From the WinTools console open a browser and access http://node-VM-IP/ (where node-VM-IP is the IP address of your web vm)
+3.	From the WinTools console open a browser and access http://web-VM-IP/ (where web-VM-IP is the IP address of your FiestaWeb vm)
 
 4.	Verify that the application loads and that products can be added and deleted.
 
-5.	Open **Command Prompt** and run ``ping -t MYSQL-VM-IP`` to verify connectivity between the client and database. Leave the ping running.
+5.	Open **Command Prompt** and run ``ping -t FiestaMYSQL-VM-IP`` to verify connectivity between the client and database. Leave the ping running.
 
-6.	Open a second Command Prompt and run ``ping -t node-VM-IP`` to verify connectivity between the client and web server. Leave the ping running.
+6.	Open a second Command Prompt and run ``ping -t FiestaWeb-VM-IP`` to verify connectivity between the client and web server. Leave the ping running.
 
 Using Flow Visualization
 ........................
@@ -318,7 +318,7 @@ In order for the policy you have defined to block traffic, the policy must be en
 
 2.	Type **ENFORCE** in the confirmation dialogue and click **OK** to begin blocking traffic.
 
-3.	Return to the **FiestaWinTools** Vm console.
+3.	Return to the **WinToolsVM** Vm console.
 
 What happens to the continuous ping traffic from the Windows client to the database server? Is this traffic blocked?
 
