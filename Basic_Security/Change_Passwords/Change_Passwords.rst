@@ -17,19 +17,21 @@ Change the default passwords!
 
 1. **Prism Central** > :fa:`bars` > **Virtual Infrastructure** > **VMs**
 
+    .. figure:: images/1-1.png
+
 #.	Check the box next to **WinTools** vm > **Actions** > **Launch Console**
 
-    .. figure:: images/1.png
+    .. figure:: images/1-2.png
 
-3.	Login in as ``administrator`` with a password of ``nutanix/4u``
+3.	Click on the **CTRL-ALT-DEL** button in upper right, and login in as ``administrator`` with a password of ``nutanix/4u``
 
-#.	Launch PuTTy
+    .. figure:: images/1-3.png
 
-    .. figure:: images/4.png
+4.	Launch PuTTY
 
 5.	Enter the IP address of your CVM (from the lab information sheet)
 
-#.	Accept the security alert.
+6.	Accept the security alert.
 
 #.	Logon as admin with the password provided in the lab information sheet.
 
@@ -46,6 +48,4 @@ Change the default passwords!
 
           sudo passwd root
 
-    .. figure:: images/9.png
-
-.. note::
+    .. figure:: images/4.png

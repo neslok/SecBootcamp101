@@ -29,6 +29,7 @@
    :hidden:
 
    Securing_apps_vms/securing_apps/Securing_apps
+   Securing_apps_vms/VDI_policy/VDI_policy.rst
    flow/flowappsec/flowappsec
    deploygraylog/deploygraylog
 

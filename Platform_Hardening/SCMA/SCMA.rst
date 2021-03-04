@@ -13,31 +13,35 @@ In this exercise you will embrace your inner dark side and compromise the securi
 
 Since this lab exercise will generate more output than can be stored in the screen buffer, we will want to log all the output to a log file for review.
 
-1.	On your Wintools vm, open PuTTY, and click on Session -> Logging in the Putty configuration window. Under Session logging: check “All session output”, and for the “Log file name”, click Browse and select the Desktop (for easy access).
+1. **Prism Central** > :fa:`bars` > **Virtual Infrastructure > VMs**
 
+2.	Check the box next to **WinToolsVM** vm, then **Actions > Launch Console**
 
+    .. figure:: images/1-1.png
 
+3.	Login in as ``administrator`` with a password of ``nutanix/4u``
 
+4.	Launch PuTTy
 
+5.	Click on **Session > Logging** in the Putty configuration window. Under **Session logging:** check ``All session output``, and for the **Log file name**, click **Browse** and select the Desktop (for easy access) and click **Save**.
 
+    .. figure:: images/1-2.png
 
-2.	Click on Session in the left column, connect to your cluster IP, and login as admin with the password provided.
+6.	Click on **Session** in the left column, enter your cluster IP, and login as ``admin`` with the password provided.
 
+7.	At the prompt, enter the command:
 
+    .. code-block:: bash
 
-3.	At the prompt, enter the command:
+      sudo salt-call state.highstate
 
-sudo salt-call state.highstate
+    .. figure:: images/1-3.png
 
+4.	After the execution completes (takes about a minute), open the putty file on the desktop with Notepad, and search for``resolv.conf``.
 
+    .. figure:: images/1-4.png
 
-Enter the admin password when prompted.
-
-4.	After the execution completes (takes about a minute), open the putty file on the desktop with Notepad, and search for “resolv.conf”.
-
-
-
-Note that no change was made.
+*Note that no change was made.*
 
 5.	Close Notepad.
 
@@ -45,22 +49,24 @@ Now we’ll “compromise” the system.
 
 6.	In the putty session, enter the below command and provide the admin password when prompted.
 
+    .. code-block:: bash
 
-sudo chmod 755 /etc/resolv.conf
+      sudo chmod 755 /etc/resolv.conf
 
-
-
+    .. figure:: images/1-5.png
 
 
 7.	Rerun the salt-call command and provide admin password when prompted. Wait until the execution completes (again, about a minute)
 
-sudo salt-call state.highstate
+    .. code-block:: bash
 
-8.	Open the putty file in Notepad again, and this time search for “Executing state file.managed for /etc/resolv.conf”. You want to find the 2nd instance of this string.
+      sudo salt-call state.highstate
 
+8.	Open the putty log file in Notepad again, and this time search for ``Executing state file.managed for /etc/resolv.conf``. You want to find the **2nd instance** of this string.
 
+    .. figure:: images/1-6.png
 
-Note the file permissions (mode) have been changed from the 755 we set them to, back to the 644 as specified in the STIG.
+*Note the file permissions (mode) have been changed from the 755 we set them to, back to the 644 as specified in the STIG.*
 
 9.	Close Notepad.
 
@@ -72,20 +78,25 @@ sudo nano /etc/ssh/sshd_config
 
 (feel free to use the editor of your choice)
 
-11.	Once the file is opened for editing, search for PermitRoot – (CTRL-W to search in nano) and change the no to yes.
+11.	Once the file is opened for editing, search for ``PermitRootLogin`` – (CTRL-W to search in nano) and change the ``no`` to ``yes``.
 
+    .. figure:: images/1-7.png
 
+    .. figure:: images/1-8.png
 
-CTRL-O to save the file, and CTRL-X to exit nano.
+13. Enter **CTRL-O** (capital O, not zero) to save the file, and **CTRL-X** to exit nano.
 
-12.	Now run the command:
+14.	Run the command:
 
-sudo salt-call state.highstate
+    .. code-block:: bash
+
+      sudo salt-call state.highstate
 
 Provide admin password when prompted and wait until the execution completes (again, about a minute)
 
-13.	Upon completion, open the putty log file and search for PermitRootLogin
+15.	Upon completion, open the putty log file and search for the **3rd instance** of ``PermitRootLogin``.
+
+    .. figure:: images/1-9.png
 
 
-
-Note the PermitRootLogin yes is preceded by a - sign indicating it was removed from the file, while PermitRootLogin no is preceded by a + sign indicating it was added, restoring the file to the parameter as defined by the STIG.
+Note the ``PermitRootLogin yes`` is preceded by a - sign indicating it was removed from the file, while ``PermitRootLogin no`` is preceded by a + sign indicating it was added, restoring the file to the parameter as defined by the STIG.

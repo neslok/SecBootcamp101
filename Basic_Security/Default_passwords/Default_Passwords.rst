@@ -19,37 +19,37 @@ Nutanix Cluster Check (NCC) provides a check to validate if there are any passwo
 
 #. In **Prism Element** select **Home** > **Health**.
 
-    .. figure:: images/1.png
+    .. figure:: images/1-1.png
 
 #. On the upper right of the Health page, select **Actions** > **Run NCC Checks**.
 
-    .. figure:: images/2.png
+    .. figure:: images/1-2.png
 
 #. In the **Run Checks** box, click **Specified Checks**, and search for **password**. Select one of the default password options.
 
-    .. figure:: images/3.png
+    .. figure:: images/1-3.png
 
 #. Repeat step 3 until all default password checks are included.
 
-    .. figure:: images/4.png
+    .. figure:: images/1-4.png
 
 #. Click **Run**
 
 #. To monitor the process, click on the **Tasks** icon in the main bar, and click on **View All Tasks**.
 
-    .. figure:: images/6.png
+    .. figure:: images/1-5.png
 
 #. Once the **Health Check** has completed, click on **Succeeded** in the Status column.
 
-    .. figure:: images/7.png
+    .. figure:: images/1-6.png
 
 #. From the View Summary page, we can see the 3 checks passed and we have an informational alert on one. Click on **Download Output** to retrieve the report and see the details.
 
-    .. figure:: images/8.png
+    .. figure:: images/1-7.png
 
 #. Open the downloaded file with notepad and review the results.
 
-    .. figure:: images/9.png
+    .. figure:: images/1-8.png
 
 In this example we can see that there is a default password on the IPMI device(s). Due to the HPOC environment, we are not permitted to change the IPMI passwords from the defaults.
 This finding is expected in this case, but what if there had been default passwords found on the CVMs in your environment?
