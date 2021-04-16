@@ -21,7 +21,6 @@
    platform_hardening/stig/stig
    platform_hardening/scma/scma
 
-
 .. toctree::
    :maxdepth: 2
    :caption: Securing VMs and Applications
@@ -29,14 +28,29 @@
    :hidden:
 
    securing_apps_vms/securing_apps/securing_apps
-   securing_apps_vms/vdi_policy/vdi_policy.rst
+   securing_apps_vms/vdi_policy/vdi_policy
    flow/flowappsec/flowappsec
    deploygraylog/deploygraylog
 
-Intro?
+.. toctree::
+   :maxdepth: 2
+   :caption: Securing Applications with Flow - PETE TEST
+   :name: _sec_apps
+   :hidden:
+
+   securing_vms_applications/securing_apps/securing_apps
+
+=====
+Intro
+=====
 
 What will they get out of this?
++++++++++++++++++++++++++++++++
 
 How long?
++++++++++
 
-:ref:`_chg_passwd`
+What else do they need to know before diving in?
+++++++++++++++++++++++++++++++++++++++++++++++++
+
+:ref:`chg_passwd`
