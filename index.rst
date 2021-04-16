@@ -32,3 +32,11 @@
    securing_apps_vms/vdi_policy/vdi_policy.rst
    flow/flowappsec/flowappsec
    deploygraylog/deploygraylog
+
+Intro?
+
+What will they get out of this?
+
+How long?
+
+:ref:`_chg_passwd`
