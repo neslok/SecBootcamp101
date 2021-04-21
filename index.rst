@@ -15,9 +15,8 @@
    :name: _basic_sec
    :hidden:
 
-   security_basics/default_passwords/default_passwords
-   security_basics/change_passwords/change_passwords
-   security_basics/custom_banner/custom_banner
+   security_basics/security_basics
+   security_basics/deploygraylog/deploygraylog
 
 ===============================
 TEST TEST TEST
