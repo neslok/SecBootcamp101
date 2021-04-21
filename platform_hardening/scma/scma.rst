@@ -1,8 +1,8 @@
 .. _scma:
 
--------------------
+---------------------------------------------------
 Security Configuration Management Automation (SCMA)
--------------------
+---------------------------------------------------
 
 STIGs are quite useful to assist in securing an environment, but how do you maintain compliance once the changes have been implemented?
 

@@ -1,8 +1,9 @@
-.. _pltfrm_hrdn:
+.. _platform_hardening:
 
 -------------------
 Platform Hardening
 -------------------
+
 The Nutanix platform (AOS and AHV) include several security features natively. These include:
 
 •	Advanced Intrusion Detection Environment (AIDE)

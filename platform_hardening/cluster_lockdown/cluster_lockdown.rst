@@ -1,8 +1,8 @@
-.. _clstr_lckdwn:
+.. _cluster_lockdown:
 
--------------------
+----------------
 Cluster Lockdown
--------------------
+----------------
 
 To further enhance the security posture of a Nutanix environment you can enable cluster lockdown. When in lockdown, password-based SSH CVM access is disabled, and only key based access is allowed.
 
