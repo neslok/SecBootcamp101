@@ -3,32 +3,30 @@
 .. toctree::
    :maxdepth: 2
    :caption: Security Basics
-   :name: _basic_sec
+   :name: _security_basics
    :hidden:
-x
-   Security_Basics/Default_passwords/Default_Passwords
-   Security_Basics/Change_Passwords/Change_Passwords
-   Security_Basics/Custom_Banner/Custom_Banner
+
+   security_basics/security_basics
 
 .. toctree::
    :maxdepth: 2
    :caption: Platform Hardening
-   :name: _pltfrm_hrdn
+   :name: _platform_hardening
    :hidden:
 
-   Platform_Hardening/Platform_Hardening/Platform_Hardening
-   Platform_Hardening/Cluster_Lockdown/Cluster_Lockdown
-   Platform_Hardening/STIG/STIG
-   Platform_Hardening/SCMA/SCMA
-
+   platform_hardening/platform_hardening/platform_hardening
+   platform_hardening/cluster_lockdown/cluster_lockdown
+   platform_hardening/stig/stig
+   platform_hardening/scma/scma
 
 .. toctree::
    :maxdepth: 2
    :caption: Securing VMs and Applications
-   :name: _sec_vms_apps
+   :name: _securing_vms_apps
    :hidden:
 
-   Securing_apps_vms/securing_apps/Securing_apps
-   Securing_apps_vms/VDI_policy/VDI_policy.rst
+   securing_apps_vms/securing_apps/securing_apps
    flow/flowappsec/flowappsec
    deploygraylog/deploygraylog
+
+KEITH - NEED SOME SORT OF INTRO HERE!
