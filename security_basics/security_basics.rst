@@ -29,9 +29,9 @@ It goes without saying, but we’re going to say it anyway, one of the first thi
 
     .. figure:: images/3.png
 
-#.	Launch PuTTY
+#.	Launch PuTTY.
 
-#.	Enter the IP address of your CVM (from the lab information sheet)
+#.	Enter the IP address of your CVM (from the lab information sheet).
 
 #.	Accept the security alert.
 
