@@ -5,7 +5,7 @@
    :caption: Security Basics
    :name: _basic_sec
    :hidden:
-x
+   
    Security_Basics/Default_passwords/Default_Passwords
    Security_Basics/Change_Passwords/Change_Passwords
    Security_Basics/Custom_Banner/Custom_Banner
