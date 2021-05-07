@@ -17,23 +17,23 @@ Running a STIG Report
 Follow the exercise below to manually run a STIG report on your Nutanix cluster. By default, these checks run on a Nutanix cluster once every 24 hours, whereas in a typical legacy infrastructure environment, STIGs would be applied manually at the time of deployment and have no automated means of ensuring the original configuration is unchanged over time.
 By default, a Nutanix cluster checks for deviations from the baseline STIG settings, and remediates when applicable, on a daily basis.
 
-1. **Prism Central** > :fa:`bars` > **Virtual Infrastructure > VMs**
+#. **Prism Central** > :fa:`bars` > **Virtual Infrastructure > VMs**
 
-2.	Check the box next to **WinToolsVM** vm, then **Actions > Launch Console**
+#.	Check the box next to **WinToolsVM** vm, then **Actions > Launch Console**
 
     .. figure:: images/1-1.png
 
-3.	Login in as ``administrator`` with a password of ``nutanix/4u``
+#.	Login in as ``administrator`` with a password of ``nutanix/4u``
 
-4.	Launch PuTTy
+#.	Launch PuTTy
 
-5.	Enter the IP address of your CVM (from the lab information sheet)
+#.	Enter the IP address of your CVM (from the lab information sheet)
 
-6.	Accept the security alert.
+#.	Accept the security alert.
 
-7.	Logon as ``admin`` with the password provided in the lab information sheet.
+#.	Logon as ``admin`` with the password provided in the lab information sheet.
 
-8.	Change to the root directory of the CVM, and list the files available to the root user to execute within the /root directory.
+#.	Change to the root directory of the CVM, and list the files available to the root user to execute within the /root directory.
 
       .. code-block:: bash
         cd /
@@ -41,7 +41,7 @@ By default, a Nutanix cluster checks for deviations from the baseline STIG setti
 
     .. figure:: images/1-2.png
 
-3.	In this example, we’ll run the generic text output ``report_stig.sh``.
+#.	In this example, we’ll run the generic text output ``report_stig.sh``.
 
       .. code-block:: bash
 
@@ -51,10 +51,10 @@ By default, a Nutanix cluster checks for deviations from the baseline STIG setti
 
     .. figure:: images/1-3.png
 
-4.	As indicated, the report is saved to ``/home/log/STIG-report-xx-xx-xxxx-xx-xx-xx`` (where the xx’s are the date/time the report was created).
+#.	As indicated, the report is saved to ``/home/log/STIG-report-xx-xx-xxxx-xx-xx-xx`` (where the xx’s are the date/time the report was created).
 
 
-5.	List the files in the folder and note the name of the report.
+#.	List the files in the folder and note the name of the report.
 
       .. code-block:: bash
 
@@ -62,7 +62,7 @@ By default, a Nutanix cluster checks for deviations from the baseline STIG setti
 
     .. figure:: images/1-4.png
 
-6.	Copy the report to the admin home directory, substituting the actual file name for the asterisks.
+#.	Copy the report to the admin home directory, substituting the actual file name for the asterisks.
 
       .. code-block:: bash
 
@@ -70,7 +70,7 @@ By default, a Nutanix cluster checks for deviations from the baseline STIG setti
 
     .. figure:: images/1-5.png
 
-7.	Change to the admin home directory and list the files.
+#.	Change to the admin home directory and list the files.
 
       .. code-block:: bash
 
@@ -81,7 +81,7 @@ By default, a Nutanix cluster checks for deviations from the baseline STIG setti
 
 *Note that the report file is only readable by root, so we’ll change the ownership.*
 
-8.	To change the file ownership to admin, enter the following command, replacing the asterisks with your actual file name:
+#.	To change the file ownership to admin, enter the following command, replacing the asterisks with your actual file name:
 
       .. code-block:: bash
 
@@ -91,19 +91,19 @@ By default, a Nutanix cluster checks for deviations from the baseline STIG setti
 
 *From your WinToolsVM vm, use a secure copy tool (SCP, WINSCP, PSCP, etc) to copy the report results file to your workstation from the CVM. Alternatively you can open and view the text file in your SSH session using vi, more, cat, etc.*
 
-9.	Open WinSCP, set the File protocol to **SCP**, enter the CVM IP address, ``admin`` for the User Name and the assigned password, and click **Login**.
+#.	Open WinSCP, set the File protocol to **SCP**, enter the CVM IP address, ``admin`` for the User Name and the assigned password, and click **Login**.
 
     .. figure:: images/1-8.png
 
-10.	Change the local directory to Desktop
+#.	Change the local directory to Desktop
 
     .. figure:: images/1-9.png
 
-11.	Drag the **STIG** report from the CVM (right pane) to the local desktop (left pane).
+#.	Drag the **STIG** report from the CVM (right pane) to the local desktop (left pane).
 
     .. figure:: images/1-10.png
 
-12.	From the desktop, open the STIG report – use Chrome or Sublime, it does not format well with NotePad.
+#.	From the desktop, open the STIG report – use Chrome or Sublime, it does not format well with NotePad.
 
 Analyzing the STIG Report
 +++++++++++++++++++++++++

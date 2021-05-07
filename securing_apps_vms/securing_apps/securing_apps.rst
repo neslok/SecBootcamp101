@@ -1,4 +1,4 @@
-.. _sec_apps:
+.. _securing_apps:
 
 -------------------
 Securing applications with Flow (Network Microsegmentation)
@@ -18,39 +18,39 @@ Defining Category Values
 
 Prism Central uses categories as metadata to tag VMs to determine how policies will be applied.
 
-1.	In **Prism Central**, select :fa:`bars` **> Virtual Infrastructure > Categories**.
+#.	In **Prism Central**, select :fa:`bars` **> Virtual Infrastructure > Categories**.
 
   .. figure:: images/1-1.png
 
-2.	Select the checkbox for **AppType** and click **Actions > Update**.
+#.	Select the checkbox for **AppType** and click **Actions > Update**.
 
   .. figure:: images/1-2.png
 
-3.	Click the :fa:`plus-circle` icon beside the last value to add an additional Category value.
+#.	Click the :fa:`plus-circle` icon beside the last value to add an additional Category value.
 
   .. figure:: images/1-3.png
 
-4.	Specify **Fiesta** as the value name.
+#.	Specify **Fiesta** as the value name.
 
   .. figure:: images/1-4.png
 
-5.	Click **Save**.
+#.	Click **Save**.
 
-6.	Select the checkbox for **AppTier** and click **Actions > Update**.
+#.	Select the checkbox for **AppTier** and click **Actions > Update**.
 
   .. figure:: images/1-5.png
 
-7.	Click the :fa:`plus-circle` icon beside the last value to add an additional Category value.
+#.	Click the :fa:`plus-circle` icon beside the last value to add an additional Category value.
 
   .. figure:: images/1-6.png
 
-8.	Specify **FiestaWeb** as the value name. This category will be applied to the application’s web tier.
+#.	Specify **FiestaWeb** as the value name. This category will be applied to the application’s web tier.
 
-9.	Click :fa:`plus-circle` and specify **FiestaDB**. This category will be applied to the application's MySQL database tier.
+#.	Click :fa:`plus-circle` and specify **FiestaDB**. This category will be applied to the application's MySQL database tier.
 
   .. figure:: images/1-7.png
 
-10.	Click **Save**.
+#.	Click **Save**.
 
 Creating a Security Policy
 ..........................
@@ -61,13 +61,13 @@ Creating a Security Policy
 
 Create the security policies that will protect the Fiesta application.
 
-1.	In **Prism Central**, select :fa:`bars` **> Policies > Security Policies**.
+#.	In **Prism Central**, select :fa:`bars` **> Policies > Security Policies**.
 
 .. figure:: images/2-1.png
 
-2.	Click **Create Security Policy > Secure Applications (App Policy) > Create**.
+#.	Click **Create Security Policy > Secure Applications (App Policy) > Create**.
 
-3.	Fill out the following fields:
+#.	Fill out the following fields:
 
     - **Name** - Fiesta
     - **Purpose** - Restrict unnecessary access to Fiesta
@@ -77,23 +77,23 @@ Create the security policies that will protect the Fiesta application.
 
     .. figure:: images/2-2.png
 
-4.	Click **Next**.
+#.	Click **Next**.
 
-5.	If prompted, click **OK, Got it!** on the tutorial diagram of the **Create App Security Policy** wizard.
+#.	If prompted, click **OK, Got it!** on the tutorial diagram of the **Create App Security Policy** wizard.
 
 *By default, the policy builder will let you control what goes in and comes out of an application based on its AppType category, but we want to get more granular than that, to ensure only certain traffic is allowed based on the individual tiers - letting us allow client traffic to our web tier, but not allow any direct client traffic to the database.*
 
-6.	Click **Set rules on App Tiers, instead**.
+#.	Click **Set rules on App Tiers, instead**.
 
     .. figure:: images/2-3.png
 
-7.	Click **Select a Tier to add**.
+#.	Click **Select a Tier to add**.
 
     .. figure:: images/2-3b.png
 
-8.	Select **AppTier:FiestaWeb** from the drop down.
+#.	Select **AppTier:FiestaWeb** from the drop down.
 
-9.	Repeat Steps 7-8 for **AppTier:FiestaDB**.
+#.	Repeat Steps 7-8 for **AppTier:FiestaDB**.
 
     .. figure:: images/2-4.png
 
@@ -101,25 +101,25 @@ Create the security policies that will protect the Fiesta application.
 
     *In this scenario we want to allow inbound TCP traffic to the web tier on TCP port 80 from all clients.*
 
-10.	Under **Inbound**, click **+ Add Source**.
-11.	Fill out the following fields to allow all inbound IP addresses:
+#.	Under **Inbound**, click **+ Add Source**.
+#.	Fill out the following fields to allow all inbound IP addresses:
 
    - **Add source by:** - Select **Subnet/IP**
    - Specify **0.0.0.0/0**
 
     .. figure:: images/2-5.png
 
-12. Click **Add**.
+#. Click **Add**.
 
   *Sources can also be specified by Categories, allowing for greater flexibility as this data can follow a VM regardless of changes to its network location. As an example, you could add a category for Administrator desktops that would also allow connections to the web and database via SSH (TCP Port 22).*
 
-12.	To create an inbound rule, select your **0.0.0.0 Inbound Traffic Subnet** and click the :fa:`pencil` icon that appears to the left of **AppTier:FiestaWeb**.
+#.	To create an inbound rule, select your **0.0.0.0 Inbound Traffic Subnet** and click the :fa:`pencil` icon that appears to the left of **AppTier:FiestaWeb**.
 
-13.	Under **Service Details**, click **Select a service**.
+#.	Under **Service Details**, click **Select a service**.
 
     Flow includes pre-defined entries for many common network services, and also allows for multiple services to be specified in a single rule. In this instance, you want to allow HTTP traffic to your webserver VMs.
 
-14.	Under **Service Name** enter **http** to use the existing service to allow for TCP/UDP Port 80 traffic.
+#.	Under **Service Name** enter **http** to use the existing service to allow for TCP/UDP Port 80 traffic.
 
     .. figure:: images/2-6.png
 
@@ -129,11 +129,11 @@ Create the security policies that will protect the Fiesta application.
 
       Multiple services (protocols and ports) can be added to a single rule.
 
-15.	Click **Save**.
+#.	Click **Save**.
 
-16.	Under **Inbound**, click **+ Add Source**.
+#.	Under **Inbound**, click **+ Add Source**.
 
-17. Fill out the following fields:
+#. Fill out the following fields:
 
    - **Add source by:** - Select **Subnet/IP**
    - Specify *Your Prism Central IP*\ /32
@@ -144,68 +144,68 @@ Create the security policies that will protect the Fiesta application.
 
      The **/32** denotes a single IP as opposed to a subnet range.
 
-18. Click **Add**.
+#. Click **Add**.
 
-19.	Select your **Prism Central Inbound Traffic Subnet** and click the :fa:`pencil` icon that appears to the left of **AppTier:FiestaWeb**.
+#.	Select your **Prism Central Inbound Traffic Subnet** and click the :fa:`pencil` icon that appears to the left of **AppTier:FiestaWeb**.
 
     .. figure:: images/2-6a.png
 
-20. Click **Select a Service** and enter **ssh** as the **Service Name** to allow TCP/UDP Port 22 traffic.
+#. Click **Select a Service** and enter **ssh** as the **Service Name** to allow TCP/UDP Port 22 traffic.
 
     .. figure:: images/2-8.png
 
-21. Click **Save**.
+#. Click **Save**.
 
-22.	Repeat Steps 19-21 for **AppTier:FiestaDB**.
+#.	Repeat Steps 19-21 for **AppTier:FiestaDB**.
 
 *By default, the security policy allows the application to send all outbound traffic to any destination. For this example we'll assume the only outbound communication required for your application is to communicate with your DNS server.*
 
-23. Under **Outbound**, select **Allowed List Only** from the drop down menu, and click **+ Add Destination**.
+#. Under **Outbound**, select **Allowed List Only** from the drop down menu, and click **+ Add Destination**.
 
     .. figure:: images/2-10.png
 
-24. Fill out the following fields:
+#. Fill out the following fields:
 
    - **Add Destination by:** - Select **Subnet/IP**
    - Specify *Your Domain Controller IP*\ /32
 
     .. figure:: images/2-11.png
 
-25. Click **Add**.
+#. Click **Add**.
 
-26. Select the **+** icon that appears to the right of **AppTier:FiestaWeb**, click **Select a Service**, enter **domain** for the Service Name,  and click **Save** to allow DNS traffic.
+#. Select the **+** icon that appears to the right of **AppTier:FiestaWeb**, click **Select a Service**, enter **domain** for the Service Name,  and click **Save** to allow DNS traffic.
 
     .. figure:: images/2-12.png
 
-27.	Repeat this for **AppTier:FiestaDB**
+#.	Repeat this for **AppTier:FiestaDB**
 
     *Each tier of the application communicates with other tiers and the policy must allow this traffic. Some tiers such as web do not require communication within the same tier.*
 
-28.	To define intra-app communication, click **Set Rules within App**.
+#.	To define intra-app communication, click **Set Rules within App**.
 
     .. figure:: images/2-13.png
 
-29.	Click **AppTier:FiestaWeb**, click **Edit** and select **No** to prevent communication between VMs in this tier.
+#.	Click **AppTier:FiestaWeb**, click **Edit** and select **No** to prevent communication between VMs in this tier.
 
     .. figure:: images/2-14.png
 
     *If this application scaled out to multiple webserver VMs, there wouldn't be a reason for them to communicate with one another, so this reduces attack surface.*
 
-29.	While **AppTier:FiestaWeb** is still selected, click the :fa:`plus-circle` icon to the right of **AppTier:FiestaDB** to create a tier-to-tier rule.
+#.	While **AppTier:FiestaWeb** is still selected, click the :fa:`plus-circle` icon to the right of **AppTier:FiestaDB** to create a tier-to-tier rule.
 
     .. figure:: images/2-15.png
 
-30.	Click **Select a Service**, enter **mysql** for the Service Name.
+#.	Click **Select a Service**, enter **mysql** for the Service Name.
 
     .. figure:: images/2-16.png
 
-31.	Click **Save**.
+#.	Click **Save**.
 
-32. Click **Next** to review the security policy.
+#. Click **Next** to review the security policy.
 
     .. figure:: images/2-17.png
 
-33. Click **Save and Monitor**.
+#. Click **Save and Monitor**.
 
     .. figure:: images/2-18.png
 
@@ -214,53 +214,53 @@ Assigning Category Values
 
 You will now apply the previously created categories to the VMs provisioned for the Fiesta application. Flow categories can be assigned as part of a Calm blueprint, but the purpose of this exercise is to understand category assignment to existing virtual machines.
 
-1.	In **Prism Central**, select :fa:`bars` **> Virtual Infrastructure > VMs**.
+#.	In **Prism Central**, select :fa:`bars` **> Virtual Infrastructure > VMs**.
 
     .. figure:: images/3-1.png
 
-2.	Click **Filters** in the upper right, to expand the Filters view.
+#.	Click **Filters** in the upper right, to expand the Filters view.
 
     .. figure:: images/3-2.png
 
-3.  Check the box in the **Name** section, enter **Fiesta** under **Contains** and press return to display the Fiesta application virtual machines.
+#.  Check the box in the **Name** section, enter **Fiesta** under **Contains** and press return to display the Fiesta application virtual machines.
 
     .. figure:: images/3-3.png
 
-4.	Using the checkboxes, select the 2 VMs associated with the application (**FiestaWeb and FiestaMYSQL**) and select **Actions > Manage Categories**.
+#.	Using the checkboxes, select the 2 VMs associated with the application (**FiestaWeb and FiestaMYSQL**) and select **Actions > Manage Categories**.
 
     .. figure:: images/3-4.png
 
-5.	Enter **Fiesta** in the search bar and select **AppType:Fiesta**
+#.	Enter **Fiesta** in the search bar and select **AppType:Fiesta**
 
     .. figure:: images/3-5.png
 
-6.  Click **Save** to assign the category to all VMs.
+#.  Click **Save** to assign the category to all VMs.
 
-7.	Select ONLY the **FiestaWeb** VM, select **Actions > Manage Categories**. specify the **AppTier:FiestaWeb** category and click **Save**.
+#.	Select ONLY the **FiestaWeb** VM, select **Actions > Manage Categories**. specify the **AppTier:FiestaWeb** category and click **Save**.
 
     .. figure:: images/3-6.png
 
-8. Specify the **AppTier:FiestaWeb** category and click **Save**.
+#. Specify the **AppTier:FiestaWeb** category and click **Save**.
 
     .. figure:: images/3-7.png
 
-9.	Repeat Step 7 and 8 to assign **AppTier:FiestaDB** to the FiestaMYSQL VM.
+#.	Repeat Step 7 and 8 to assign **AppTier:FiestaDB** to the FiestaMYSQL VM.
 
 Now we will assign a category to the **WinToolsVM**
 
-10.	In the search box in the upper left corner, enter **WinToolsVm**, and select the **WinToolsVM** VM from the list.
+#.	In the search box in the upper left corner, enter **WinToolsVm**, and select the **WinToolsVM** VM from the list.
 
     .. figure:: images/3-8.png
 
-11. Click **More**, then click **Manage Categories** on the drop-down.
+#. Click **More**, then click **Manage Categories** on the drop-down.
 
     .. figure:: images/3-9.png
 
-12. In the **Set Categories** section, enter **dev** in the last box, and click on **Environment:Dev**.
+#. In the **Set Categories** section, enter **dev** in the last box, and click on **Environment:Dev**.
 
     .. figure:: images/3-10.png
 
-13. Click on the blue + to assign this category to the VM.
+#. Click on the blue + to assign this category to the VM.
 
 In this lab, you assigned the Environment:Dev category to the WinToolsVM, the AppType:Fiesta to the FiestaWeb and FiestaMYSQL VMs. In addition to categorizing the Fiesta VMs with the AppType, you also categorized each VM by AppTier - web and DB.
 
@@ -272,57 +272,57 @@ Before applying the Flow policy, you will ensure the Fiesta application is worki
 Testing the Application
 .......................
 
-1.	From **Prism Central > Virtual Infrastructure > VMs**, note the IP addresses of your **FiestaMYSQL** and **FiestaWeb** VMs.
+#.	From **Prism Central > Virtual Infrastructure > VMs**, note the IP addresses of your **FiestaMYSQL** and **FiestaWeb** VMs.
 
-2.	Launch the console for your **WinTools** VM.
+#.	Launch the console for your **WinTools** VM.
 
-3.	From the WinTools console open a browser and access http://web-VM-IP/ (where web-VM-IP is the IP address of your FiestaWeb vm)
+#.	From the WinTools console open a browser and access http://web-VM-IP/ (where web-VM-IP is the IP address of your FiestaWeb vm)
 
-4.	Verify that the application loads and that products can be added and deleted.
+#.	Verify that the application loads and that products can be added and deleted.
 
-5.	Open **Command Prompt** and run ``ping -t FiestaMYSQL-VM-IP`` to verify connectivity between the client and database. Leave the ping running.
+#.	Open **Command Prompt** and run ``ping -t FiestaMYSQL-VM-IP`` to verify connectivity between the client and database. Leave the ping running.
 
-6.	Open a second Command Prompt and run ``ping -t FiestaWeb-VM-IP`` to verify connectivity between the client and web server. Leave the ping running.
+#.	Open a second Command Prompt and run ``ping -t FiestaWeb-VM-IP`` to verify connectivity between the client and web server. Leave the ping running.
 
 Using Flow Visualization
 ........................
 
-1.	Return to **Prism Central** and select :fa:`bars` **> Virtual Infrastructure > Policies > Security Policies > FiestaFiesta**.
+#.	Return to **Prism Central** and select :fa:`bars` **> Virtual Infrastructure > Policies > Security Policies > FiestaFiesta**.
 
-2.	Verify that your **WinTools** VM appears as an inbound source.
+#.	Verify that your **WinTools** VM appears as an inbound source.
 
     *The source and line appear in yellow to indicate that traffic has been detected from your client VM.*
 
 Are there any other detected outbound traffic flows? Hover over these connections and determine what ports are in use.
 
-3.	Click **Update** to edit the policy.
+#.	Click **Update** to edit the policy.
 
-4.	Click **Next** and wait for the detected traffic flows to populate.
+#.	Click **Next** and wait for the detected traffic flows to populate.
 
-5.	Mouse over the VM  **Wintools** source that was discovered and click **Allow Traffic**.
+#.	Mouse over the VM  **Wintools** source that was discovered and click **Allow Traffic**.
 
-6.	Check the boxes next to the discovered traffic you want to permit within the policy. In this case we will permit traffic from our **WinTools** VM to the web server and block traffic to the DB server.
+#.	Check the boxes next to the discovered traffic you want to permit within the policy. In this case we will permit traffic from our **WinTools** VM to the web server and block traffic to the DB server.
 
-7. Click **Save**.
+#. Click **Save**.
 
 The IP address of your **Wintools** VM is now added to the permitted inbound list, with a connection to the web server. Mouse over the flow line, and verify the ICMP traffic is allowed. Note that there is still a discovered connection to the DB server. This is because we did not permit this traffic, so it is still showing as an exception to our policy rule.
 
-7.	Click **Next > Save and Monitor** to update the policy.
+#.	Click **Next > Save and Monitor** to update the policy.
 
 Enforcing Flow Policies
 .......................
 
 In order for the policy you have defined to block traffic, the policy must be enforced.
 
-1.	Select **FiestaFiesta** and click **Actions > Enforce**.
+#.	Select **FiestaFiesta** and click **Actions > Enforce**.
 
-2.	Type **ENFORCE** in the confirmation dialogue and click **OK** to begin blocking traffic.
+#.	Type **ENFORCE** in the confirmation dialogue and click **OK** to begin blocking traffic.
 
-3.	Return to the **WinToolsVM** Vm console.
+#.	Return to the **WinToolsVM** Vm console.
 
 What happens to the continuous ping traffic from the Windows client to the database server? Is this traffic blocked?
 
-4.	Verify that the Windows Client VM can still access the Fiesta application using the web browser and the web server IP address.
+#.	Verify that the Windows Client VM can still access the Fiesta application using the web browser and the web server IP address.
 
 Can you still add new products under Products and update product quantities under Inventory?
 
