@@ -17,11 +17,11 @@ In this lab you will change the default passwords.
 
 It goes without saying, but we’re going to say it anyway, one of the first things that should be done on a newly deployed system is to change the passwords used to install.
 
-#. **Prism Central** > :fa:`bars` > **Virtual Infrastructure** > **VMs**
+#. **Prism Central** > :fa:`bars` > **Virtual Infrastructure** > **VMs**.
 
    .. figure:: images/1.png
 
-#.	Check the box next to **WinTools** vm > **Actions** > **Launch Console**
+#.	Check the box next to **WinTools** vm > **Actions** > **Launch Console**.
 
    .. figure:: images/2.png
 
