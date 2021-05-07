@@ -37,23 +37,23 @@ It goes without saying, but we’re going to say it anyway, one of the first thi
 
 #.	Logon as admin with the password provided in the lab information sheet.
 
-   .. note::
+         .. note::
 
-      There are 2 system accounts within AOS which have default passwords after cluster initialization: **nutanix** and **root**. To change these, issue the following commands, providing the admin password when prompted.
+            There are 2 system accounts within AOS which have default passwords after cluster initialization: **nutanix** and **root**. To change these, issue the following commands, providing the admin password when prompted.
 
 #.	For the nutanix account:
 
-   .. code-block:: bash
+         .. code-block:: bash
 
-      sudo passwd nutanix
+            sudo passwd nutanix
 
 #.	For the root account:
 
-   .. code-block:: bash
+         .. code-block:: bash
 
-      sudo passwd root
+            sudo passwd root
 
-   .. figure:: images/4.png
+         .. figure:: images/4.png
 
 .. _check_passwords:
 
