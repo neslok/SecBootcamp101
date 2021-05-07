@@ -26,7 +26,9 @@
    :hidden:
 
    securing_apps_vms/securing_apps/securing_apps
-   flow/flowappsec/flowappsec
+   securing_apps_vms/vdi_policy/vdi_policy
    deploygraylog/deploygraylog
 
-KEITH - NEED SOME SORT OF INTRO HERE!
+Nutanix takes a holistic approach to security with a secure platform, extensive automation, and a robust partner ecosystem. The Nutanix security development life cycle (SecDL) integrates security into every step of product development, rather than applying it as an afterthought. The SecDL is a foundational part of product design. The strong pervasive culture and processes built around security harden the Enterprise Cloud Platform and eliminate zero-day vulnerabilities. Efficient one-click operations and self-healing security models easily enable automation to maintain security in an always-on hyperconverged solution.
+
+This workshop introduces some of the basic security activities such as checking for and changing default passwords, hardening the the platform and advanced VM security with Flow microsegmentation.

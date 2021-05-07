@@ -19,15 +19,15 @@ It goes without saying, but we’re going to say it anyway, one of the first thi
 
 #. **Prism Central** > :fa:`bars` > **Virtual Infrastructure** > **VMs**
 
-    .. figure:: images/1.png
+  .. figure:: images/1.png
 
 #.	Check the box next to **WinTools** vm > **Actions** > **Launch Console**
 
-    .. figure:: images/2.png
+  .. figure:: images/2.png
 
 #.	Click on the **CTRL-ALT-DEL** button in upper right, and login in as ``administrator`` with a password of ``nutanix/4u``
 
-    .. figure:: images/3.png
+  .. figure:: images/3.png
 
 #.	Launch PuTTY.
 
