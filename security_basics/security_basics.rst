@@ -17,21 +17,21 @@ In this lab you will change the default passwords.
 
 It goes without saying, but we’re going to say it anyway, one of the first things that should be done on a newly deployed system is to change the passwords used to install.
 
-#. **Prism Central** > :fa:`bars` > **Virtual Infrastructure** > **VMs**.
+#. Within **Prism Central** > :fa:`bars` > **Virtual Infrastructure** > **VMs**.
 
    .. figure:: images/1.png
 
-#.	Check the box next to **WinTools** vm > **Actions** > **Launch Console**.
+#. Check the box next to **WinTools** vm > **Actions** > **Launch Console**.
 
    .. figure:: images/2.png
 
-#.	Click on the **CTRL-ALT-DEL** button in upper right, and login in as ``administrator`` with a password of ``nutanix/4u``.
+#. Click on the **CTRL-ALT-DEL** button in upper right, and login in as ``administrator`` with a password of ``nutanix/4u``.
 
    .. figure:: images/3.png
 
-#.	Launch PuTTY.
+#. Launch PuTTY.
 
-#.	Enter the IP address of your CVM (from the lab information sheet).
+#. Enter the IP address of your CVM (from the lab information sheet).
 
 #.	Accept the security alert.
 
