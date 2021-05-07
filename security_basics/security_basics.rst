@@ -25,7 +25,7 @@ It goes without saying, but we’re going to say it anyway, one of the first thi
 
    .. figure:: images/2.png
 
-#.	Click on the **CTRL-ALT-DEL** button in upper right, and login in as ``administrator`` with a password of ``nutanix/4u``
+#.	Click on the **CTRL-ALT-DEL** button in upper right, and login in as ``administrator`` with a password of ``nutanix/4u``.
 
    .. figure:: images/3.png
 
@@ -139,4 +139,5 @@ In this lab you will enable and create a customer banner for Prism Element.
    .. figure:: images/17.png
 
    .. note::
+
       This procedure also is applicable for Prism Central.
