@@ -20,51 +20,55 @@ In this lab you will check the currnet settings, enable AIDE and set SCMA to run
 **Covered Test IDs:** N/A
 
 To view the current configuration:
+
+
 #.	In Prism Central click on :fa:`bars` **> Virtual Infrastructure >VMs**
 
-  .. figure:: images/1-1.png
+        .. figure:: images/1-1.png
 
 #.	Check the box next to **WinTools** vm, then **Actions > Launch Console**
 
-  .. figure:: images/1-2.png
+        .. figure:: images/1-2.png
 
 #.	Click the **CTL-ALT-DEL** button in the upper right corner.
 
-  .. figure:: images/1-3.png
+        .. figure:: images/1-3.png
 
 #. Login in as administrator with a password of nutanix/4u.
 
-  .. figure:: images/1-4.png
+        .. figure:: images/1-4.png
 
 #.	Launch **PuTTY**.
 
 #.	Enter the IP address of your CVM (from the lab information sheet)
 
-  .. figure:: images/1-6.png
+        .. figure:: images/1-6.png
 
 #.	Accept the security alert
 
-  .. figure:: images/1-7.png
+        .. figure:: images/1-7.png
 
 #.	Logon as **admin** with the password from the lab information sheet.
 
 #.	Enter the following command on the CVM to view settings for these security settings.
-    .. code-block:: bash
 
-      ncli cluster get-cvm-security-config
+        .. code-block:: bash
 
-  .. figure:: images/1-8.png
+          ncli cluster get-cvm-security-config
+
+        .. figure:: images/1-8.png
 
     .. note::
 
       These settings are for the CVM only, the hypervisor maybe configured differently. Please refer to security documentation from your hypervisor vendor for more information.
 
 #.	To view these settings on AHV, issue following command:
-    .. code-block:: bash
 
-      ncli cluster get-hypervisor-security-config
+        .. code-block:: bash
 
-  .. figure:: images/1-9.png
+          ncli cluster get-hypervisor-security-config
+
+        .. figure:: images/1-9.png
 
 
 *Note that everything is disabled by default, and the SCMA schedule is set to run daily.*
@@ -72,15 +76,16 @@ To view the current configuration:
 Let’s enable AIDE and change the schedule SCMA to scan the system on an hourly basis.
 
 #.	At the CVM ssh prompt, enter the following commands:
-    .. code-block:: bash
 
-      ncli cluster edit-cvm-security-params enable-aide=true
+        .. code-block:: bash
 
-    .. code-block:: bash
+          ncli cluster edit-cvm-security-params enable-aide=true
 
-      ncli cluster edit-cvm-security-params schedule=HOURLY
+        .. code-block:: bash
 
-  .. figure:: images/1-10.png
+          ncli cluster edit-cvm-security-params schedule=HOURLY
+
+        .. figure:: images/1-10.png
 
       .. note::
 
