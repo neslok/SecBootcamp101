@@ -1,8 +1,8 @@
 .. _securing_apps:
 
--------------------
+-----------------------------------------------------------
 Securing applications with Flow (Network Microsegmentation)
--------------------
+-----------------------------------------------------------
 
 Flow is an application-centric network security product tightly integrated into Nutanix AHV and Prism Central. Flow provides rich network traffic visualization, automation, and security for VMs running on AHV.
 Microsegmentation is a component of Flow that uses simple policy-based management to secure VM networking. Using Prism Central categories (logical groups), you can create a powerful distributed firewall. Combining this with Calm allows automated deployment of applications that are secured as they are created.
@@ -20,29 +20,29 @@ Prism Central uses categories as metadata to tag VMs to determine how policies w
 
 #.	In **Prism Central**, select :fa:`bars` **> Virtual Infrastructure > Categories**.
 
-  .. figure:: images/1-1.png
+        .. figure:: images/1-1.png
 
 #.	Select the checkbox for **AppType** and click **Actions > Update**.
 
-  .. figure:: images/1-2.png
+        .. figure:: images/1-2.png
 
 #.	Click the :fa:`plus-circle` icon beside the last value to add an additional Category value.
 
-  .. figure:: images/1-3.png
+        .. figure:: images/1-3.png
 
 #.	Specify **Fiesta** as the value name.
 
-  .. figure:: images/1-4.png
+        .. figure:: images/1-4.png
 
 #.	Click **Save**.
 
 #.	Select the checkbox for **AppTier** and click **Actions > Update**.
 
-  .. figure:: images/1-5.png
+        .. figure:: images/1-5.png
 
 #.	Click the :fa:`plus-circle` icon beside the last value to add an additional Category value.
 
-  .. figure:: images/1-6.png
+        .. figure:: images/1-6.png
 
 #.	Specify **FiestaWeb** as the value name. This category will be applied to the application’s web tier.
 
