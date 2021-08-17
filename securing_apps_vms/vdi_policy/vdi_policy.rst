@@ -1,67 +1,67 @@
 .. _vdi_pol:
 
--------------------
+-----------------------------------
 Flow ID Based Security (VDI Policy)
--------------------
+-----------------------------------
 
 ID based firewall integrates Nutanix Flow with Microsoft Active Directory (AD), such that the groups in the AD can be imported into Prism Central as categories. These imported categories can then be used in the VDI policy as target groups, inbound traffic, and outbound traffic. Prism Central automatically places VMs inside the imported AD group categories when user logons are detected on VMs that are part of the Active Directory domain and present on Nutanix managed clusters, thus applying security policies based on user group membership.
 
 First, we have to enable connectivity between Prism Central so that we can import AD user groups for identity based security policies.
 
 Connecting Flow to Active Directory
-++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++
 
-#.	In **Prism Central**, select :fa:`bars` **> Prism Central Settings**.
+#. In **Prism Central**, select :fa:`bars` **> Prism Central Settings**.
 
-  .. figure:: images/1-1.png
+      .. figure:: images/1-1.png
 
 #. Click **ID Based Security** from the Settings menu (on the left).
 
-  .. figure:: images/1-2.png
+      .. figure:: images/1-2.png
 
-#.	Click **Use Existing AD**.
+#. Click **Use Existing AD**.
 
-#.	Select **ntnxlab** in the AD Server dropdown.
+#. Select **ntnxlab** in the AD Server dropdown.
 
-  .. figure:: images/1-3.png
+      .. figure:: images/1-3.png
 
-#.	Enter nutanix/4u for the Service Account Password.
+#. Enter nutanix/4u for the Service Account Password.
 
-  .. figure:: images/1-4.png
+      .. figure:: images/1-4.png
 
-#.	Click **Next**.
+#. Click **Next**.
 
-#.	Click the **Manually Add Domain Controller** button, then click **+ Domain Controller**.
+#. Click the **Manually Add Domain Controller** button, then click **+ Domain Controller**.
 
-  .. figure:: images/1-5.png
+      .. figure:: images/1-5.png
 
 #.	Enter the IP Address or Host Name of the domain controllers in your lab environment (provided in the lab info sheet).
 
-  .. figure:: images/1-6.png
+      .. figure:: images/1-6.png
 
 #.  Click **Save**
 
 #.	Confirm that the **Configured Domain** and **Domain Controllers** is as shown.
 
-  .. figure:: images/1-7.png
+    .. figure:: images/1-7.png
 
-    ..note::
+      .. note::
 
     You can safely ignore the alert relating to upgrading the Prism-Pro-Cluster.
 
 #. In the **Referenced AD Groups** section, click **+ Add User Group**.
 
-  .. figure:: images/1-8.png
+    .. figure:: images/1-8.png
 
 #. Click in the **Search AD User Groups** field and enter **developer**. SSP Developers should populate the field.
 
-  .. figure:: images/1-9.png
+    .. figure:: images/1-9.png
 
 #.	Click the blue check box to confirm and add to the list.
 
 #.	Repeat steps 11 - 13, entering **consumer** in the **User Group** field.
 
-  .. figure:: images/1-10.png
+    .. figure:: images/1-10.png
 
 #. In **Prism Central**, select :fa:`bars` **> Policies > Security Policies**.
 

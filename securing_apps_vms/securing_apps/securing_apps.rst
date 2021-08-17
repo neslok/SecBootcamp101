@@ -48,7 +48,7 @@ Prism Central uses categories as metadata to tag VMs to determine how policies w
 
 #.	Click :fa:`plus-circle` and specify **FiestaDB**. This category will be applied to the application's MySQL database tier.
 
-  .. figure:: images/1-7.png
+        .. figure:: images/1-7.png
 
 #.	Click **Save**.
 
