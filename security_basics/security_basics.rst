@@ -4,57 +4,6 @@
 Security Basics
 ---------------
 
-.. _change_passwords:
-
-Change The Default Passwords
-++++++++++++++++++++++++++++
-
-In this lab you will change the default passwords.
-
-**Expected Module Duration:** 5 minutes
-
-**Covered Test IDs:** N/A
-
-It goes without saying, but we’re going to say it anyway, one of the first things that should be done on a newly deployed system is to change the passwords used to install.
-
-#. Within **Prism Central** > :fa:`bars` > **Virtual Infrastructure** > **VMs**.
-
-   .. figure:: images/1.png
-
-#. Check the box next to **WinTools** vm > **Actions** > **Launch Console**.
-
-      .. figure:: images/2.png
-
-#. Click on the **CTRL-ALT-DEL** button in upper right, and login in as ``administrator`` with a password of ``nutanix/4u``.
-
-         .. figure:: images/3.png
-
-#. Launch PuTTY.
-
-#. Enter the IP address of your CVM (from the lab information sheet).
-
-#.	Accept the security alert.
-
-#.	Logon as admin with the password provided in the lab information sheet.
-
-         .. note::
-
-            There are 2 system accounts within AOS which have default passwords after cluster initialization: **nutanix** and **root**. To change these, issue the following commands, providing the admin password when prompted.
-
-#.	For the nutanix account:
-
-         .. code-block:: bash
-
-            sudo passwd nutanix
-
-#.	For the root account:
-
-         .. code-block:: bash
-
-            sudo passwd root
-
-         .. figure:: images/4.png
-
 .. _check_passwords:
 
 NCC Check for Default Passwords
@@ -101,6 +50,58 @@ Nutanix Cluster Check (NCC) provides a check to validate if there are any passwo
 In this example we can see that there is a default password on the IPMI device(s). Due to the HPOC environment, we are not permitted to change the IPMI passwords from the defaults.
 This finding is expected in this case, but what if there had been default passwords found on the CVMs in your environment?
 
+.. _change_passwords:
+
+Change The Default Passwords
+++++++++++++++++++++++++++++
+
+In this lab you will change the default passwords.
+
+**Expected Module Duration:** 5 minutes
+
+**Covered Test IDs:** N/A
+
+It goes without saying, but we’re going to say it anyway, one of the first things that should be done on a newly deployed system is to change the passwords used to install.
+
+#. Within **Prism Central** > :fa:`bars` > **Virtual Infrastructure** > **VMs**.
+
+      .. figure:: images/1.png
+
+#. Check the box next to **WinTools** vm > **Actions** > **Launch Console**.
+
+      .. figure:: images/2.png
+
+#. Click on the **CTRL-ALT-DEL** button in upper right, and login in as ``administrator`` with a password of ``nutanix/4u``.
+
+      .. figure:: images/3.png
+
+#. Launch PuTTY.
+
+#. Enter the IP address of your CVM (from the lab information sheet).
+
+#.	Accept the security alert.
+
+#.	Logon as admin with the password provided in the lab information sheet.
+
+         .. note::
+
+            There are 2 system accounts within AOS which have default passwords after cluster initialization: **nutanix** and **root**. To change these, issue the following commands, providing the admin password when prompted.
+
+#.	For the nutanix account:
+
+         .. code-block:: bash
+
+            sudo passwd nutanix
+
+#.	For the root account:
+
+         .. code-block:: bash
+
+            sudo passwd root
+
+         .. figure:: images/4.png
+
+
 .. _custom_banner:
 
 Configure Custom Banner
@@ -116,15 +117,15 @@ In this lab you will enable and create a customer banner for Prism Element.
 
 #.	Prism Element, click **Home > Settings**.
 
-   .. figure:: images/13.png
+         .. figure:: images/13.png
 
 #. In the Settings pan one the left, scroll to the bottom and click on **Welcome Banner**.
 
-   .. figure:: images/14.png
+         .. figure:: images/14.png
 
 #.	Enter your text into the black area (you can use HTML to mark up the text).
 
-   .. figure:: images/15.png
+         .. figure:: images/15.png
 
 #.	Check **Enable Banner**.
 
@@ -132,11 +133,11 @@ In this lab you will enable and create a customer banner for Prism Element.
 
 #.	In the upper right corner, click on **admin**, then click on **Sign Out**.
 
-   .. figure:: images/16.png
+         .. figure:: images/16.png
 
 #.	Now before seeing a login prompt, the banner is displayed, and must be accepted to login.
 
-   .. figure:: images/17.png
+         .. figure:: images/17.png
 
    .. note::
 

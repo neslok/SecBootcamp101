@@ -14,7 +14,7 @@ Securing the Fiesta Application
 Flow provides multiple System categories out of the box, such as AppType, AppTier, and Environment, that are used to quickly group virtual machines. Security policies are applied using these categories. You can start using these pre-existing categories right away, or add your own categories for custom grouping.
 
 Defining Category Values
-++++++++++++++++++++++++
+........................
 
 Prism Central uses categories as metadata to tag VMs to determine how policies will be applied.
 
@@ -63,39 +63,39 @@ Create the security policies that will protect the Fiesta application.
 
 #.	In **Prism Central**, select :fa:`bars` **> Policies > Security Policies**.
 
-.. figure:: images/2-1.png
+        .. figure:: images/2-1.png
 
 #.	Click **Create Security Policy > Secure Applications (App Policy) > Create**.
 
 #.	Fill out the following fields:
 
-    - **Name** - Fiesta
-    - **Purpose** - Restrict unnecessary access to Fiesta
-    - **Secure this app** - AppType:Fiesta
-    - Do **NOT** select **Filter the app type by category**
-    - (Optional, if **Syslog** configured for cluster) Enable **Policy Hit Logs**
+        - **Name** - Fiesta
+        - **Purpose** - Restrict unnecessary access to Fiesta
+        - **Secure this app** - AppType:Fiesta
+        - Do **NOT** select **Filter the app type by category**
+        - (Optional, if **Syslog** configured for cluster) Enable **Policy Hit Logs**
 
-    .. figure:: images/2-2.png
+        .. figure:: images/2-2.png
 
 #.	Click **Next**.
 
 #.	If prompted, click **OK, Got it!** on the tutorial diagram of the **Create App Security Policy** wizard.
 
-*By default, the policy builder will let you control what goes in and comes out of an application based on its AppType category, but we want to get more granular than that, to ensure only certain traffic is allowed based on the individual tiers - letting us allow client traffic to our web tier, but not allow any direct client traffic to the database.*
+        *By default, the policy builder will let you control what goes in and comes out of an application based on its AppType category, but we want to get more granular than that, to ensure only certain traffic is allowed based on the individual tiers - letting us allow client traffic to our web tier, but not allow any direct client traffic to the database.*
 
 #.	Click **Set rules on App Tiers, instead**.
 
-    .. figure:: images/2-3.png
+        .. figure:: images/2-3.png
 
 #.	Click **Select a Tier to add**.
 
-    .. figure:: images/2-3b.png
+        .. figure:: images/2-3b.png
 
 #.	Select **AppTier:FiestaWeb** from the drop down.
 
 #.	Repeat Steps 7-8 for **AppTier:FiestaDB**.
 
-    .. figure:: images/2-4.png
+        .. figure:: images/2-4.png
 
     *Next you will define the Inbound rules, which control which sources you will allow to communicate with your application. You can allow all inbound traffic, or define whitelisted sources. By default, the security policy is set to deny all incoming traffic.*
 
