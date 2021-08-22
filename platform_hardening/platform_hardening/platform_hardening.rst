@@ -58,9 +58,9 @@ To view the current configuration:
 
         .. figure:: images/1-8.png
 
-    .. note::
+        .. note::
 
-      These settings are for the CVM only, the hypervisor maybe configured differently. Please refer to security documentation from your hypervisor vendor for more information.
+                These settings are for the CVM only, the hypervisor maybe configured differently. Please refer to security documentation from your hypervisor vendor for more information.
 
 #.	To view these settings on AHV, issue following command:
 
@@ -71,9 +71,9 @@ To view the current configuration:
         .. figure:: images/1-9.png
 
 
-*Note that everything is disabled by default, and the SCMA schedule is set to run daily.*
+        *Note that everything is disabled by default, and the SCMA schedule is set to run daily.*
 
-Let’s enable AIDE and change the schedule SCMA to scan the system on an hourly basis.
+        Let’s enable AIDE and change the schedule SCMA to scan the system on an hourly basis.
 
 #.	At the CVM ssh prompt, enter the following commands:
 

@@ -6,29 +6,29 @@ Cluster Lockdown
 
 To further enhance the security posture of a Nutanix environment you can enable cluster lockdown. When in lockdown, password-based SSH CVM access is disabled, and only key based access is allowed.
 
-First, we need to generate public and private keys.
+First, we need to generate public and private keys. There are a number of different methods to do this. For this lab we will use PuTTYGen to create the keys.
 
-1. **Prism Central** > :fa:`bars` > **Virtual Infrastructure > VMs**
+#. In Prism Central click on :fa:`bars` > **Virtual Infrastructure > VMs**
 
-#.	Check the box next to **WinToolsVM** vm, then **Actions > Launch Console**
+#. Check the box next to **WinToolsVM** vm, then **Actions > Launch Console**
 
         .. figure:: images/1-1.png
 
-#.	Login in as ``administrator`` with a password of ``nutanix/4u``
+#. Login in as ``administrator`` with a password of ``nutanix/4u``
 
-#.	Launch PuTTYGen
+#. Launch PuTTYGen
 
-#.	Click **Generate** and move the mouse randomly in the blank area until the key is generated.
+#. Click **Generate** and move the mouse randomly in the blank area until the key is generated.
 
         .. figure:: images/1-2.png
 
-#.	Click **Save public key**, and save it to the desktop as ``intials-Key.pub`` (adding a .pub extension).
+#. Click **Save public key**, and save it to the desktop as ``intials-Key.pub`` (adding a .pub extension).
 
         .. figure:: images/1-3.png
 
         .. figure:: images/1-4.png
 
-#.	Click **Save private key**, click **Yes** to save without a passphrase, and save it to the desktop as ``intials-Key.ppk`` (adding a .ppk extension).
+#. Click **Save private key**, click **Yes** to save without a passphrase, and save it to the desktop as ``intials-Key.ppk`` (adding a .ppk extension).
 
         .. figure:: images/1-5.png
 
@@ -53,7 +53,7 @@ First, we need to generate public and private keys.
 
         .. figure:: images/1-10.png
 
-            Assure the key begins with ``ssh-rsa`` and ends with ``rsa-key-xxxxxxxx`` (where xxxxxxxx is the creation date of the key). This means the complete key has been inserted.
+        *Assure the key begins with ``ssh-rsa`` and ends with ``rsa-key-xxxxxxxx`` (where xxxxxxxx is the creation date of the key). This means the complete key has been inserted.
 
 #.	Click **Save** to save the key to the cluster.
 
