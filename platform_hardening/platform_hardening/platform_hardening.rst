@@ -13,7 +13,7 @@ The Nutanix platform (AOS and AHV) include several security features natively. T
 •	SNMPv3 Only – Forces use of SNMPv3 instead of v2
 •	SCMA schedule – Nutanix has implemented security configuration management automation (SCMA) to check multiple security entities (STIG) for both Nutanix storage and AHV. Nutanix automatically reports log inconsistencies and reverts them to the baseline.
 
-In this lab you will check the currnet settings, enable AIDE and set SCMA to run hourly.
+In this lab you will check the current settings, enable AIDE and set SCMA to run hourly.
 
 **Expected Module Duration:** 5 minutes
 
