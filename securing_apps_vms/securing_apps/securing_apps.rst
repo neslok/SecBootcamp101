@@ -97,27 +97,27 @@ Create the security policies that will protect the Fiesta application.
 
         .. figure:: images/2-4.png
 
-    *Next you will define the Inbound rules, which control which sources you will allow to communicate with your application. You can allow all inbound traffic, or define whitelisted sources. By default, the security policy is set to deny all incoming traffic.*
+        *Next you will define the Inbound rules, which control which sources you will allow to communicate with your application. You can allow all inbound traffic, or define whitelisted sources. By default, the security policy is set to deny all incoming traffic.*
 
-    *In this scenario we want to allow inbound TCP traffic to the web tier on TCP port 80 from all clients.*
+        *In this scenario we want to allow inbound TCP traffic to the web tier on TCP port 80 from all clients.*
 
 #.	Under **Inbound**, click **+ Add Source**.
 #.	Fill out the following fields to allow all inbound IP addresses:
 
-   - **Add source by:** - Select **Subnet/IP**
-   - Specify **0.0.0.0/0**
+        - **Add source by:** - Select **Subnet/IP**
+        - Specify **0.0.0.0/0**
 
-    .. figure:: images/2-5.png
+        .. figure:: images/2-5.png
 
 #. Click **Add**.
 
-  *Sources can also be specified by Categories, allowing for greater flexibility as this data can follow a VM regardless of changes to its network location. As an example, you could add a category for Administrator desktops that would also allow connections to the web and database via SSH (TCP Port 22).*
+        *Sources can also be specified by Categories, allowing for greater flexibility as this data can follow a VM regardless of changes to its network location. As an example, you could add a category for Administrator desktops that would also allow connections to the web and database via SSH (TCP Port 22).*
 
 #.	To create an inbound rule, select your **0.0.0.0 Inbound Traffic Subnet** and click the :fa:`pencil` icon that appears to the left of **AppTier:FiestaWeb**.
 
 #.	Under **Service Details**, click **Select a service**.
 
-    Flow includes pre-defined entries for many common network services, and also allows for multiple services to be specified in a single rule. In this instance, you want to allow HTTP traffic to your webserver VMs.
+        Flow includes pre-defined entries for many common network services, and also allows for multiple services to be specified in a single rule. In this instance, you want to allow HTTP traffic to your webserver VMs.
 
 #.	Under **Service Name** enter **http** to use the existing service to allow for TCP/UDP Port 80 traffic.
 
